@@ -1,0 +1,105 @@
+﻿@model IEnumerable<EticaretMonolit.Models.Urun>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table table-responsive">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stok)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resim)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kategori)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AppUserUser)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stok)
+                </td>
+                <td>
+                    Resim
+                    @*@Html.DisplayFor(modelItem => item.Resim)*@
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Aciklama)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kategori.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AppUserUser.Id)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+    
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="card col-sm-4">
+            <img src="@Html.DisplayFor(modelItem => item.Resim)" class="img-fluid card-img-top w-100 d-block" />
+            <div class="card-body">
+                <h4 class="card-title">@Html.DisplayFor(modelItem => item.Adi)</h4>
+                <strong>@Html.DisplayFor(model => item.Stok)</strong>
+                <hr />
+                <strong>@Html.DisplayFor(modelItem => item.AppUserId)</strong>
+                <hr />
+                <strong>@Html.DisplayFor(model => item.Kategori.Adi)</strong>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Aciklama) id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                <hr />
+                <button class="btn btn-warning" type="button">Düzenle</button>
+                <button class="btn btn-secondary" type="button">Detay</button>
+                <button class="btn btn-danger" type="button">Sil</button>
+            </div>
+        </div>
+    }
+</div>
+        <div class="card">
+            <img class="card-img-top w-100 d-block" />
+            <div class="card-body">
+                <h4 class="card-title">Title</h4>
+                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top w-100 d-block" />
+            <div class="card-body">
+                <h4 class="card-title">Title</h4>
+                <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary" type="button">Button</button>
+            </div>
+        </div>
+    

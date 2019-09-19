@@ -14,8 +14,7 @@ namespace EticaretMonolit.Models
         public AppUser(string userName) : base(userName)
         {
         }
-        
-        public List<Urun> Uruns { get; set; }
+
 
     }
 }

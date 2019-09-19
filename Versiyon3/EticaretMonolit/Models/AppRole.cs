@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace EticaretMonolit.Models
 {
-    public class AppUser:IdentityUser<string>
+    public class AppRole : IdentityRole<string>
     {
-        public AppUser() : base()
+        public AppRole() : base()
         {
         }
-        public AppUser(string userName) : base(userName)
+        public AppRole(string roleName) : base(roleName)
         {
         }
-        
-        public List<Urun> Uruns { get; set; }
 
     }
 }
